@@ -1,0 +1,253 @@
+:root {
+  --bg: #17111b;
+  --card: #241b29;
+  --muted: #b9a2b5;
+  --green: #91d2ae;
+  --red: #f09ab2;
+  --white: #f7edf5;
+  font-family: Inter, "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(137, 66, 104, 0.3) 0, transparent 32%),
+    radial-gradient(ellipse at 90% 85%, rgba(102, 79, 155, 0.25) 0, transparent 35%),
+    var(--bg);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.card {
+  width: min(650px, 100%);
+  align-self: flex-start;
+  background: rgba(36, 27, 41, 0.94);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid #49344b;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f3a8c1, #bba8ed);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  box-shadow: 0 7px 16px rgba(210, 135, 170, 0.16);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 5px;
+  color: #ffe6f1;
+  font-size: 25px;
+}
+
+h2 {
+  margin-bottom: 16px;
+  color: #f2d9ec;
+  font-size: 19px;
+}
+
+.lead {
+  color: var(--muted);
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+  gap: 14px;
+}
+
+.box {
+  flex: 1;
+  padding: 17px 12px;
+  border-radius: 16px;
+  background: #302333;
+  text-align: center;
+}
+
+.box h3 {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.box p {
+  margin-bottom: 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.box.green {
+  background: #20332c;
+  border-bottom: 3px solid #6fb58f;
+}
+
+.box.red {
+  background: #38232f;
+  border-bottom: 3px solid #d87e9a;
+}
+
+.big {
+  font-size: 26px !important;
+  font-weight: 700;
+}
+
+.add {
+  margin-top: 28px;
+}
+
+label {
+  display: block;
+  margin: 14px 0;
+}
+
+label span {
+  display: block;
+  margin-bottom: 7px;
+  color: #cbb2c5;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #1c1520;
+  border: 1px solid #503c51;
+  border-radius: 12px;
+  color: var(--white);
+  outline: none;
+  font: inherit;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input::placeholder {
+  color: #927d91;
+}
+
+input:focus {
+  border-color: #d99ab9;
+  box-shadow: 0 0 0 3px rgba(203, 145, 173, 0.2);
+}
+
+.btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  background: linear-gradient(100deg, #db91ae, #a998df);
+  border: 0;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 7px 16px rgba(186, 129, 173, 0.18);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(186, 129, 173, 0.24);
+}
+
+.list {
+  margin-top: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: #2b202f;
+  border: 1px solid #49354b;
+  border-left: 4px solid;
+  padding: 13px;
+  margin: 9px 0;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.list .text {
+  flex: 1;
+  margin-left: 4px;
+  overflow-wrap: anywhere;
+}
+
+.list .amount.green {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.list .amount.red {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.del-btn {
+  background: transparent;
+  border: 0;
+  color: #c09caf;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.del-btn:hover {
+  color: #ff9fbb;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .card {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .summary {
+    gap: 8px;
+  }
+
+  .box {
+    padding: 14px 6px;
+  }
+
+  .box p {
+    font-size: 16px;
+  }
+}
